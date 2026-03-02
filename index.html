@@ -9,12 +9,12 @@
   <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@400;700;900&family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
   <style>
     :root {
-      --navy:      #1a2744;
-      --deep-blue: #2d4a8a;
-      --blue-mid:  #3d5fa0;
-      --gold:      #c9a84c;
-      --gold-light:#e8c86a;
-      --light-bg:  #eef2f9;
+      --navy:      #1A1A1A;
+      --deep-blue: #E8192C;
+      --blue-mid:  #C01020;
+      --gold:      #E8192C;
+      --gold-light:#FF6B78;
+      --light-bg:  #FFF5F5;
       --white:     #ffffff;
     }
 
@@ -31,9 +31,9 @@
 
     /* ── Backgrounds ── */
     .bg-hero {
-      background: linear-gradient(140deg, #0d1928 0%, #1a2744 55%, #2a3f7a 100%);
+      background: linear-gradient(140deg, #0D0D0D 0%, #1A1A1A 55%, #2C0A10 100%);
     }
-    .bg-alt { background: linear-gradient(180deg, #eef2f9 0%, #f5f7fd 100%); }
+    .bg-alt { background: linear-gradient(180deg, #FFF5F5 0%, #FFF9F9 100%); }
 
     /* ── Section divider ── */
     .divider {
@@ -46,8 +46,8 @@
     /* ── Buttons ── */
     .btn-gold {
       display: inline-block;
-      background: linear-gradient(135deg, #b8922a 0%, var(--gold-light) 50%, #b8922a 100%);
-      color: #1a2744;
+      background: linear-gradient(135deg, #C01020 0%, #E8192C 50%, #C01020 100%);
+      color: #ffffff;
       font-weight: 700;
       font-size: 1.05rem;
       padding: 1rem 2.5rem;
@@ -56,12 +56,12 @@
       cursor: pointer;
       text-decoration: none;
       transition: transform 0.15s ease, box-shadow 0.15s ease;
-      box-shadow: 0 4px 22px rgba(201,168,76,.45);
+      box-shadow: 0 4px 22px rgba(232,25,44,.45);
       letter-spacing: 0.02em;
     }
-    .btn-gold:hover  { transform: scale(1.03) translateY(-2px); box-shadow: 0 8px 32px rgba(201,168,76,.55); }
-    .btn-gold:focus  { outline: none; box-shadow: 0 0 0 3px rgba(201,168,76,.5); }
-    .btn-gold:active { transform: scale(0.98); box-shadow: 0 2px 10px rgba(201,168,76,.3); }
+    .btn-gold:hover  { transform: scale(1.03) translateY(-2px); box-shadow: 0 8px 32px rgba(232,25,44,.60); }
+    .btn-gold:focus  { outline: none; box-shadow: 0 0 0 3px rgba(232,25,44,.5); }
+    .btn-gold:active { transform: scale(0.98); box-shadow: 0 2px 10px rgba(232,25,44,.3); }
 
     .btn-outline {
       display: inline-block;
@@ -86,23 +86,23 @@
       border-left: 4px solid var(--deep-blue);
       border-radius: 0 10px 10px 0;
       padding: 1rem 1.5rem;
-      box-shadow: 0 2px 14px rgba(45,74,138,.08);
+      box-shadow: 0 2px 14px rgba(232,25,44,.08);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-    .pain-card:hover { transform: translateX(5px); box-shadow: 0 4px 22px rgba(45,74,138,.14); }
+    .pain-card:hover { transform: translateX(5px); box-shadow: 0 4px 22px rgba(232,25,44,.16); }
 
     .benefit-card {
       background: #fff;
       border-radius: 14px;
       padding: 1.5rem;
-      box-shadow: 0 2px 18px rgba(26,39,68,.08);
+      box-shadow: 0 2px 18px rgba(26,26,26,.07);
       transition: transform 0.2s ease, box-shadow 0.2s ease;
     }
-    .benefit-card:hover { transform: translateY(-5px); box-shadow: 0 8px 30px rgba(26,39,68,.14); }
+    .benefit-card:hover { transform: translateY(-5px); box-shadow: 0 8px 30px rgba(232,25,44,.12); }
 
     /* ── Offer box ── */
     .offer-box {
-      background: linear-gradient(140deg, #1a2744 0%, #2d4a8a 100%);
+      background: linear-gradient(140deg, #1A1A1A 0%, #2C0A10 100%);
       border-radius: 18px;
       overflow: hidden;
       position: relative;
@@ -111,7 +111,7 @@
       content: '';
       position: absolute; top: -40%; right: -15%;
       width: 420px; height: 420px;
-      background: radial-gradient(circle, rgba(201,168,76,.13) 0%, transparent 70%);
+      background: radial-gradient(circle, rgba(232,25,44,.18) 0%, transparent 70%);
       pointer-events: none;
     }
 
@@ -124,7 +124,7 @@
     }
 
     /* ── FAQ ── */
-    .faq-item { border-bottom: 1px solid #dde5f0; }
+    .faq-item { border-bottom: 1px solid #FFDDE0; }
     .faq-btn {
       width: 100%;
       display: flex;
@@ -164,7 +164,7 @@
     .f-input {
       width: 100%;
       padding: 0.875rem 1rem;
-      border: 2px solid #dde5f0;
+      border: 2px solid #FFDDE0;
       border-radius: 8px;
       font-size: 1rem;
       font-family: 'Noto Sans KR', sans-serif;
@@ -175,7 +175,7 @@
     .f-input:focus {
       outline: none;
       border-color: var(--deep-blue);
-      box-shadow: 0 0 0 3px rgba(45,74,138,.15);
+      box-shadow: 0 0 0 3px rgba(232,25,44,.15);
     }
 
     /* ── Scarcity bar ── */
@@ -189,9 +189,9 @@
     /* ── Badge ── */
     .badge-gold {
       display: inline-block;
-      background: rgba(201,168,76,.18);
+      background: rgba(232,25,44,.18);
       color: var(--gold-light);
-      border: 1px solid rgba(201,168,76,.45);
+      border: 1px solid rgba(232,25,44,.45);
       border-radius: 100px;
       padding: 0.25rem 0.9rem;
       font-size: 0.78rem;
@@ -212,7 +212,7 @@
     /* ── Sticky header ── */
     .sticky-header {
       position: sticky; top: 0; z-index: 100;
-      background: rgba(26,39,68,.96);
+      background: rgba(26,26,26,.96);
       backdrop-filter: blur(10px);
     }
 
@@ -242,10 +242,10 @@
 <section class="bg-hero py-24 md:py-36 px-6 text-white relative overflow-hidden">
   <!-- Background glows -->
   <div style="position:absolute;top:8%;left:4%;width:320px;height:320px;
-              background:radial-gradient(circle,rgba(45,74,138,.4) 0%,transparent 70%);
+              background:radial-gradient(circle,rgba(232,25,44,.35) 0%,transparent 70%);
               border-radius:50%;pointer-events:none;"></div>
   <div style="position:absolute;bottom:8%;right:4%;width:400px;height:400px;
-              background:radial-gradient(circle,rgba(201,168,76,.12) 0%,transparent 70%);
+              background:radial-gradient(circle,rgba(232,25,44,.15) 0%,transparent 70%);
               border-radius:50%;pointer-events:none;"></div>
 
   <div class="max-w-4xl mx-auto text-center relative" style="z-index:1;">
@@ -259,12 +259,12 @@
     </h1>
 
     <p class="fade-2 text-lg md:text-xl leading-relaxed mb-3 max-w-2xl mx-auto"
-       style="color:#ccd9f0;">
+       style="color:#FFD6DA;">
       몇 번이나 시도했는데도 매번 실패한다면,<br>
       <strong style="color:#fff;">문제는 당신이 아닙니다.</strong>
     </p>
     <p class="fade-2 text-base md:text-lg leading-relaxed mb-10 max-w-2xl mx-auto"
-       style="color:#9fb3d4;">
+       style="color:#FFB0B8;">
       나를 제대로 알지 못한 채 연애를 시작했기 때문입니다.
     </p>
 
@@ -277,7 +277,7 @@
       </a>
     </div>
 
-    <p class="fade-3 text-sm mt-6" style="color:#6b8dbf;">
+    <p class="fade-3 text-sm mt-6" style="color:#D4888F;">
       ✓ 7일 무조건 환불 보장 &nbsp;|&nbsp; ✓ 선착순 월 5명 한정 &nbsp;|&nbsp; ✓ 무료 전화 상담 포함
     </p>
   </div>
@@ -369,7 +369,7 @@
         </ul>
       </div>
       <!-- Good -->
-      <div style="background:linear-gradient(135deg,#e8eef8,#f0f5ff);border-radius:14px;padding:1.5rem;border:2px solid var(--deep-blue);">
+      <div style="background:linear-gradient(135deg,#ffe8ea,#fff0f2);border-radius:14px;padding:1.5rem;border:2px solid var(--deep-blue);">
         <p style="font-weight:700;color:var(--deep-blue);margin-bottom:0.875rem;">✅ 1:1 연애심리상담 & 코칭</p>
         <ul style="list-style:none;display:flex;flex-direction:column;gap:0.5rem;font-size:0.9rem;color:#2d3748;">
           <li>• <strong>나의 연애 패턴과 심리 분석</strong></li>
@@ -380,9 +380,9 @@
       </div>
     </div>
 
-    <div style="background:linear-gradient(135deg,#1a2744,#2d4a8a);border-radius:14px;padding:1.75rem 2rem;text-align:center;color:#fff;">
+    <div style="background:linear-gradient(135deg,#1A1A1A,#2C0A10);border-radius:14px;padding:1.75rem 2rem;text-align:center;color:#fff;">
       <p style="font-weight:700;font-size:1.05rem;margin-bottom:0.625rem;">핵심 원리</p>
-      <p style="color:#c3d4f0;line-height:1.85;">
+      <p style="color:#FFD0D5;line-height:1.85;">
         나를 제대로 알면, <strong style="color:#fff;">나에게 딱 맞는 사람</strong>이 누군지 알게 됩니다.<br>
         그리고 그 사람과 <strong style="color:#fff;">어떻게 관계를 만들어가야 하는지</strong>도 자연스럽게 알게 됩니다.
       </p>
@@ -467,7 +467,7 @@
     <div class="offer-box" style="padding:2.5rem 2rem 2.5rem;margin-bottom:1.5rem;">
       <div style="position:relative;z-index:1;color:#fff;">
         <!-- Badge -->
-        <div style="display:inline-block;background:rgba(201,168,76,.2);border:1px solid rgba(201,168,76,.6);
+        <div style="display:inline-block;background:rgba(232,25,44,.2);border:1px solid rgba(232,25,44,.6);
                     border-radius:100px;padding:0.25rem 1rem;font-size:0.78rem;font-weight:600;
                     color:var(--gold-light);letter-spacing:0.06em;margin-bottom:1.25rem;">
           선착순 월 5명 한정
@@ -483,7 +483,7 @@
             <span style="color:var(--gold-light);font-size:1.2rem;margin-top:0.1rem;flex-shrink:0;">✓</span>
             <div>
               <p style="font-weight:600;">핵심: 1:1 연애심리상담 & 코칭 60분</p>
-              <p style="color:#9fb3d4;font-size:0.875rem;margin-top:0.2rem;">
+              <p style="color:#CC8890;font-size:0.875rem;margin-top:0.2rem;">
                 나의 연애 심리 분석 + 맞춤형 연애 전략 수립
               </p>
             </div>
@@ -492,7 +492,7 @@
             <span style="color:var(--gold-light);font-size:1.2rem;margin-top:0.1rem;flex-shrink:0;">✓</span>
             <div>
               <p style="font-weight:600;">보너스: 1회 무료 전화 상담 포함</p>
-              <p style="color:#9fb3d4;font-size:0.875rem;margin-top:0.2rem;">
+              <p style="color:#CC8890;font-size:0.875rem;margin-top:0.2rem;">
                 코칭 후 실천 과정에서 궁금한 점을 무료로 질문 (가치: 50,000원)
               </p>
             </div>
@@ -501,14 +501,14 @@
 
         <!-- Price -->
         <div style="border-top:1px solid rgba(255,255,255,.15);padding-top:1.5rem;margin-bottom:2rem;">
-          <p style="color:#6b8dbf;text-decoration:line-through;font-size:0.95rem;margin-bottom:0.25rem;">
+          <p style="color:#AA7070;text-decoration:line-through;font-size:0.95rem;margin-bottom:0.25rem;">
             총 가치 200,000원
           </p>
           <div style="display:flex;align-items:baseline;gap:0.5rem;">
             <span class="font-display" style="font-size:2.5rem;font-weight:700;color:var(--gold-light);">
               150,000원
             </span>
-            <span style="color:#9fb3d4;">/ 1회 세션</span>
+            <span style="color:#CC8890;">/ 1회 세션</span>
           </div>
         </div>
 
@@ -609,12 +609,12 @@
     <h2 class="font-display text-2xl md:text-3xl font-bold mb-5">
       더 이상 혼자 고민하지 마세요
     </h2>
-    <p style="color:#9fb3d4;font-size:1.05rem;line-height:1.85;margin-bottom:2rem;">
+    <p style="color:#FFD0D5;font-size:1.05rem;line-height:1.85;margin-bottom:2rem;">
       지금 무료 상담을 신청하면<br>
       <strong style="color:#fff;">나에게 맞는 연애의 시작점</strong>을 함께 찾아드립니다.
     </p>
 
-    <div style="display:inline-block;background:rgba(201,168,76,.18);border:1px solid rgba(201,168,76,.4);
+    <div style="display:inline-block;background:rgba(232,25,44,.18);border:1px solid rgba(232,25,44,.4);
                 border-radius:100px;padding:0.4rem 1.25rem;font-size:0.875rem;font-weight:600;
                 color:var(--gold-light);margin-bottom:1.75rem;">
       ⚡ 이번 달 남은 자리: 2자리
@@ -626,7 +626,7 @@
       </a>
     </div>
 
-    <p style="color:#6b8dbf;font-size:0.875rem;">
+    <p style="color:#D4888F;font-size:0.875rem;">
       ✓ 7일 무조건 환불 보장 &nbsp;·&nbsp; ✓ 비대면 가능 &nbsp;·&nbsp; ✓ 1회 무료 전화 상담 포함
     </p>
   </div>
@@ -736,7 +736,7 @@
   <div class="max-w-2xl mx-auto">
     <div style="background:#fff;border-radius:14px;padding:2rem;
                 border-left:4px solid var(--gold);
-                box-shadow:0 2px 16px rgba(26,39,68,.06);">
+                box-shadow:0 2px 16px rgba(232,25,44,.07);">
       <p style="font-weight:700;color:var(--navy);margin-bottom:0.75rem;">P.S.</p>
       <p style="color:#4a5568;line-height:1.9;font-size:0.95rem;">
         30대 중반이라는 나이가 연애의 장벽처럼 느껴지시나요?
@@ -758,7 +758,7 @@
 <!-- ═══════════════════════════════════════
      FOOTER
 ════════════════════════════════════════ -->
-<footer style="background:var(--navy);color:#5a7099;text-align:center;
+<footer style="background:var(--navy);color:#AA7070;text-align:center;
                padding:2rem 1.5rem;font-size:0.85rem;">
   <p>© 2026 1:1 연애심리상담 & 코칭. All rights reserved.</p>
   <p style="margin-top:0.35rem;">무료 상담: 위 폼 작성 후 48시간 이내 연락</p>
