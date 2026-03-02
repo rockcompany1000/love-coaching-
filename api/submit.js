@@ -11,7 +11,9 @@ module.exports = async function handler(req, res) {
     return res.status(405).json({ error: '허용되지 않는 요청입니다.' });
   }
 
-  const { name, phone, email, status, concern } = req.body;
+  // body가 문자열로 들어온 경우 파싱
+  const body = typeof req.body === 'string' ? JSON.parse(req.body) : req.body;
+  const { name, phone, email, status, concern } = body;
 
   if (!name || !phone || !email || !status || !concern) {
     return res.status(400).json({ error: '필수 항목을 모두 입력해주세요.' });
@@ -43,7 +45,7 @@ module.exports = async function handler(req, res) {
       from: 'onboarding@resend.dev',
       to: process.env.ADMIN_EMAIL,
       subject: `[새 상담 신청] ${name}님이 상담을 신청했습니다`,
-      html: `
+      html: `<!DOCTYPE html><html><head><meta charset="UTF-8"></head><body>
         <div style="font-family:sans-serif;max-width:600px;margin:0 auto;padding:2rem;background:#f5f7fd;border-radius:12px;">
           <h2 style="color:#1a2744;border-bottom:2px solid #c9a84c;padding-bottom:0.75rem;">
             새 상담 신청이 접수되었습니다
@@ -59,7 +61,7 @@ module.exports = async function handler(req, res) {
             48시간 이내 연락 부탁드립니다.
           </p>
         </div>
-      `,
+        </body></html>`,
     }),
   }).catch(err => console.error('Admin email error:', err));
 
@@ -74,7 +76,7 @@ module.exports = async function handler(req, res) {
       from: 'onboarding@resend.dev',
       to: email,
       subject: '상담 신청이 완료되었습니다 ✅',
-      html: `
+      html: `<!DOCTYPE html><html><head><meta charset="UTF-8"></head><body>
         <div style="font-family:sans-serif;max-width:600px;margin:0 auto;padding:2rem;">
           <div style="background:linear-gradient(135deg,#1a2744,#2d4a8a);border-radius:12px;padding:2rem;color:#fff;text-align:center;margin-bottom:1.5rem;">
             <h2 style="margin:0 0 0.5rem;">상담 신청 완료!</h2>
@@ -82,7 +84,7 @@ module.exports = async function handler(req, res) {
           </div>
           <p style="line-height:1.8;color:#2d3748;">안녕하세요, <strong>${name}</strong>님.</p>
           <p style="line-height:1.8;color:#2d3748;">
-            1:1 연애심리상담 & 코칭 상담 신청이 정상적으로 접수되었습니다.<br>
+            1:1 연애심리상담 &amp; 코칭 상담 신청이 정상적으로 접수되었습니다.<br>
             <strong>48시간 이내</strong>로 입력하신 연락처로 연락드리겠습니다.
           </p>
           <div style="background:#f5f7fd;border-radius:10px;padding:1.25rem 1.5rem;margin:1.5rem 0;border-left:4px solid #c9a84c;">
@@ -95,7 +97,7 @@ module.exports = async function handler(req, res) {
             좋은 하루 보내세요!
           </p>
         </div>
-      `,
+        </body></html>`,
     }),
   }).catch(err => console.error('Applicant email error:', err));
 
