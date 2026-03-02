@@ -29,7 +29,7 @@ module.exports = async function handler(req, res) {
 
   if (dbError) {
     console.error('Supabase error:', dbError);
-    return res.status(500).json({ error: 'DB 저장에 실패했습니다.' });
+    return res.status(500).json({ error: 'DB 저장에 실패했습니다.', detail: dbError.message, code: dbError.code });
   }
 
   // ── 2. 관리자 알림 이메일 ─────────────────────────────
