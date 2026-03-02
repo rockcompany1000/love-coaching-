@@ -11,8 +11,21 @@ module.exports = async function handler(req, res) {
     return res.status(405).json({ error: '허용되지 않는 요청입니다.' });
   }
 
-  // body가 문자열로 들어온 경우 파싱
-  const body = typeof req.body === 'string' ? JSON.parse(req.body) : req.body;
+  // raw body 스트림에서 직접 읽어 UTF-8로 파싱
+  const rawBody = await new Promise((resolve, reject) => {
+    const chunks = [];
+    req.on('data', chunk => chunks.push(Buffer.isBuffer(chunk) ? chunk : Buffer.from(chunk)));
+    req.on('end', () => resolve(Buffer.concat(chunks).toString('utf-8')));
+    req.on('error', reject);
+  });
+
+  let body;
+  try {
+    body = rawBody ? JSON.parse(rawBody) : req.body;
+  } catch {
+    body = req.body;
+  }
+
   const { name, phone, email, status, concern } = body;
 
   if (!name || !phone || !email || !status || !concern) {
